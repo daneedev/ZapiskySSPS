@@ -1,0 +1,16 @@
+{
+  "name": "zapiskyssps",
+  "version": "1.0.0",
+  "description": "Moje zápisky ze školy",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "DaneeSkripter",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "tailwindcss": "^3.3.5"
+  }
+}
