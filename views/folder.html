@@ -15,6 +15,7 @@
         <th class="p-3">Datum</th>
         <th class="p-3">Nahrál</th>
         <th class="p-3">Velikost</th>
+        <th class="p-3">Typ</th>
         <th class="p-3">Akce</th>
     </tr>
 </thead>
@@ -25,7 +26,12 @@
     <td class="p-3">{{ file.date }}</td>
     <td class="p-3">-</td>
     <td class="p-3">{{ file.size }} MB</td>
+    <td class="p-3">{{ file.type }}</td>
+    {% if file.type == "složka" %}
+    <td class="p-3"><a href="/{{ folder }}{{ file.name }}">Otevřít</a></td>
+    {% else %}
     <td class="p-3"><a href="/{{ folder }}{{ file.name }}">Stáhnout</a></td>
+    {% endif %}
 </tr>
 {% endfor %}
 </tbody>

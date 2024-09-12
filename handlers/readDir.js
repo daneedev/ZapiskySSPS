@@ -19,8 +19,17 @@ function getDirectoryContent(directoryPath, callback) {
             name: file,
             date: dayjs(fileStats.mtime).format("DD.MM.YYYY"),
             size: fileStats.size / (1024*1024),
+            type: "soubor"
           }
           fileList.push(object);
+        } else {
+            const object = {
+                name: file,
+                date: dayjs(fileStats.mtime).format("DD.MM.YYYY"),
+                size: fileStats.size / (1024*1024),
+                type: "složka"
+            }
+            fileList.push(object);
         }
       });
   
