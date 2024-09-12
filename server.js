@@ -22,7 +22,7 @@ app.get("/*", function (req, res) {
     if (!currentPath.includes("favicon.ico")) {
       readdir(currentPath, (err, content) => {
       if (err) {
-        res.status(404).send("No directory or file found")
+        res.redirect("/")
       }
       res.render("folder.html", { content: content, folder: req.params[0] });
     })
