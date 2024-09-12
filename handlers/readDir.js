@@ -1,5 +1,6 @@
 const fs = require("fs")
-
+const dayjs = require("dayjs")
+const path = require("path");
 
 function getDirectoryContent(directoryPath, callback) {
     fs.readdir(directoryPath, (err, files) => {
@@ -8,25 +9,23 @@ function getDirectoryContent(directoryPath, callback) {
       }
   
       const fileList = [];
-      const folderList = [];
   
       files.forEach((file) => {
         const fullPath = path.join(directoryPath, file);
         const fileStats = fs.statSync(fullPath);
   
-        if (fileStats.isDirectory()) {
-          folderList.push(file);
-        } else {
-          fileList.push(file);
+        if (!fileStats.isDirectory()) {
+          const object = {
+            name: file,
+            date: dayjs(fileStats.mtime).format("DD.MM.YYYY"),
+            size: fileStats.size / (1024*1024),
+          }
+          fileList.push(object);
         }
       });
   
-      const content = {
-        folders: folderList,
-        files: fileList,
-      };
   
-      callback(null, content);
+      callback(null, fileList);
     });
   }
 
