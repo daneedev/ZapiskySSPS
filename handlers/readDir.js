@@ -18,7 +18,7 @@ function getDirectoryContent(directoryPath, callback) {
           const object = {
             name: file,
             date: dayjs(fileStats.mtime).format("DD.MM.YYYY"),
-            size: fileStats.size / (1024*1024),
+            size: (fileStats.size / (1024*1024)).toFixed(2),
             type: "soubor"
           }
           fileList.push(object);
@@ -26,7 +26,7 @@ function getDirectoryContent(directoryPath, callback) {
             const object = {
                 name: file,
                 date: dayjs(fileStats.mtime).format("DD.MM.YYYY"),
-                size: fileStats.size / (1024*1024),
+                size: (fileStats.size / (1024*1024)).toFixed(2),
                 type: "složka"
             }
             fileList.push(object);
