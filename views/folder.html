@@ -1,0 +1,39 @@
+{% extends "template.html" %}
+
+{% block head %}
+<title>Zápisky SSPŠ</title>
+
+{% endblock %}
+
+{% block body %}
+<div id="myGrid"></div>
+
+<table id="fileTable"  class="h-[500px] border-separate text-lg shadow-xl rounded-lg overflow-x-auto whitespace-nowrap block">
+<thead class="bg-gray-800 text-white text-left">
+    <tr>
+        <th class="p-3">Název</th>
+        <th class="p-3">Datum</th>
+        <th class="p-3">Nahrál</th>
+        <th class="p-3">Velikost</th>
+        <th class="p-3">Akce</th>
+    </tr>
+</thead>
+<tbody class="text-white bg-gray-800 rounded-lg">
+{% for file in content %}
+<tr>
+    <td class="p-3">{{ file.name }}</td>
+    <td class="p-3">{{ file.date }}</td>
+    <td class="p-3">-</td>
+    <td class="p-3">{{ file.size }} MB</td>
+    <td class="p-3"><a href="/{{ folder }}{{ file.name }}">Stáhnout</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<form class="mt-5" action="/">
+    <button type="submit" class="w-[150px] h-[50px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
+        <div class="flex flex-col items-center">
+            <h1 class="text-white text-xl font-bold"><i class="fa-solid fa-circle-left"></i>&nbsp;Zpět</h1>
+        </div>
+    </button></form>
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "template.html" %}
+
+{% block head %}
+<title>Zápisky SSPŠ</title>
+{% endblock %}
+
+{% block body %}
+<div class="flex flex-row">
+    <form class="flex flex-col items-center mr-5" method="get" action="/mat_mp">
+        <button type="submit" class="w-[300px] h-[200px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
+            <div class="flex flex-col items-center">
+                <h1 class="text-white text-3xl font-bold mb-2"><i class="fa-solid fa-calculator"></i>&nbsp;Matematika</h1>
+                <p class="text-white text-lg"><i class="fa-solid fa-circle-info"></i>&nbsp;2. ročník</p>
+                <p class="text-white text-lg mb-2"><i class="fa-solid fa-user-group"></i>&nbsp;SK: Pavel Miškovský</p>
+            </div>
+        </button>
+    </form>
+    <form class="flex flex-col items-center" method="get" action="/fy2">
+        <button type="submit" class="w-[300px] h-[200px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
+            <div class="flex flex-col items-center">
+                <h1 class="text-white text-3xl font-bold mb-2"><i class="fa-solid fa-atom"></i>&nbsp;Fyzika</h1>
+                <p class="text-white text-lg"><i class="fa-solid fa-circle-info"></i>&nbsp;2. ročník</p>
+            </div>
+        </button>
+    </form>
+</div>
+<div class="flex flex-row mt-5 gap-5">
+    <form class="flex flex-col items-center" method="get" action="/psi">
+        <button type="submit" class="w-[300px] h-[200px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
+            <div class="flex flex-col items-center">
+                <h1 class="text-white text-3xl font-bold mb-2"><i class="fa-solid fa-ethernet"></i>&nbsp;Počítačové sítě</h1>
+                <p class="text-white text-lg"><i class="fa-solid fa-circle-info"></i>&nbsp;1. ročník</p>
+            </div>
+        </button>
+    </form>
+    <form class="flex flex-col items-center" method="get" action="/mat">
+        <button type="submit" class="w-[300px] h-[200px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
+            <div class="flex flex-col items-center">
+                <h1 class="text-white text-3xl font-bold mb-2"><i class="fa-solid fa-calculator"></i>&nbsp;Matematika</h1>
+                <p class="text-white text-lg"><i class="fa-solid fa-circle-info"></i>&nbsp;1. ročník</p>
+            </div>
+        </button>
+    </form>
+    <form class="flex flex-col items-center" method="get" action="/dej">
+        <button type="submit" class="w-[300px] h-[200px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
+            <div class="flex flex-col items-center">
+                <h1 class="text-white text-3xl font-bold mb-2"><i class="fa-solid fa-landmark"></i>&nbsp;Dějepis</h1>
+                <p class="text-white text-lg"><i class="fa-solid fa-circle-info"></i>&nbsp;1. ročník</p>
+            </div>
+        </button>
+    </form>
+    <form class="flex flex-col items-center" method="get" action="/fyz">
+        <button type="submit" class="w-[300px] h-[200px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
+            <div class="flex flex-col items-center">
+                <h1 class="text-white text-3xl font-bold mb-2"><i class="fa-solid fa-atom"></i>&nbsp;Fyzika</h1>
+                <p class="text-white text-lg"><i class="fa-solid fa-circle-info"></i>&nbsp;1. ročník</p>
+            </div>
+        </button>
+    </form>
+</div>
+{% endblock%}
