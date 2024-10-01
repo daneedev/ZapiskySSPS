@@ -23,8 +23,9 @@ app.get("/*", function (req, res) {
       readdir(currentPath, (err, content) => {
       if (err) {
         res.redirect("/")
+      } else {
+        res.render("folder.html", { content: content, folder: req.params[0] });
       }
-      res.render("folder.html", { content: content, folder: req.params[0] });
     })
   }
 })
