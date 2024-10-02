@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block body %}
-<div class="flex flex-row">
-    <form class="flex flex-col items-center mr-5" method="get" action="/mat_mp">
+<div class="flex flex-row gap-5 max-md:flex-col">
+    <form class="flex flex-col items-center" method="get" action="/mat_mp">
         <button type="submit" class="w-[300px] h-[200px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
             <div class="flex flex-col items-center">
                 <h1 class="text-white text-3xl font-bold mb-2"><i class="fa-solid fa-calculator"></i>&nbsp;Matematika</h1>
@@ -24,7 +24,7 @@
         </button>
     </form>
 </div>
-<div class="flex flex-row mt-5 gap-5">
+<div class="flex flex-row gap-5 mt-5 max-md:flex-col">
     <form class="flex flex-col items-center" method="get" action="/psi">
         <button type="submit" class="w-[300px] h-[200px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
             <div class="flex flex-col items-center">
