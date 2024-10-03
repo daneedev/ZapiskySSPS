@@ -6,9 +6,8 @@
 {% endblock %}
 
 {% block body %}
-<div id="myGrid"></div>
-
-<table id="fileTable"  class="h-[500px] border-separate text-lg rounded-lg overflow-x-auto whitespace-nowrap block">
+<div class="max-md:overflow-x-auto">
+<table id="fileTable"  class="max-h-[500px] border-separate text-lg rounded-lg overflow-x-auto whitespace-nowrap block max-md:w-screen">
 <thead class="bg-gray-800 text-white text-left">
     <tr>
         <th class="p-3">Název</th>
@@ -16,26 +15,25 @@
         <th class="p-3">Nahrál</th>
         <th class="p-3">Velikost</th>
         <th class="p-3">Typ</th>
-        <th class="p-3">Akce</th>
     </tr>
 </thead>
 <tbody class="text-white bg-gray-800 rounded-lg">
 {% for file in content %}
 <tr>
-    <td class="p-3">{{ file.name }}</td>
+    {% if file.type == "složka" %}
+    <td class="p-3 underline"><a href="/{{ folder }}{{ file.name }}">{{ file.name }}/</a></td>
+    {% else %}
+    <td class="p-3 underline"><a href="/{{ folder }}{{ file.name }}">{{ file.name }}</a></td>
+    {% endif %}
     <td class="p-3">{{ file.date }}</td>
     <td class="p-3">-</td>
     <td class="p-3">{{ file.size }} MB</td>
     <td class="p-3">{{ file.type }}</td>
-    {% if file.type == "složka" %}
-    <td class="p-3"><a href="/{{ folder }}{{ file.name }}">Otevřít</a></td>
-    {% else %}
-    <td class="p-3"><a href="/{{ folder }}{{ file.name }}">Stáhnout</a></td>
-    {% endif %}
 </tr>
 {% endfor %}
 </tbody>
 </table>
+</div>  
 <form class="mt-5" action="/">
     <button type="submit" class="w-[150px] h-[50px] bg-gray-600 duration-300 opacity-90 rounded-2xl flex flex-col p-5 shadow-lg transform hover:scale-105 transition-transform items-center justify-center text-center">
         <div class="flex flex-col items-center">
